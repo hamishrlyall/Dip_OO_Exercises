@@ -18,7 +18,7 @@ namespace OO_Tasks_Inheritence {
             return _name;
         }
 
-        public virtual Shape(string Name, string Colour)
+        public Shape(string Name, string Colour)
         {
 
         }
@@ -40,7 +40,7 @@ namespace OO_Tasks_Inheritence {
     {
         private int _NumSides = 4;
 
-        public virtual Quadrilateral(string Name, string Colour)
+        public Quadrilateral(string Name, string Colour) : base (Name, Colour)
         {
 
         }
@@ -55,7 +55,7 @@ namespace OO_Tasks_Inheritence {
     {
         private double _sideLength;
 
-        public Square (string Name, string Colour, string SideLength)
+        public Square (string Name, string Colour, double SideLength) : base (Name, Colour)
         {
 
         }
@@ -70,7 +70,7 @@ namespace OO_Tasks_Inheritence {
             return _sideLength * _sideLength;
         }
 
-        public double GetPerimeter()
+        public override double GetPerimeter()
         {
             return 4 * _sideLength;
         }
@@ -82,7 +82,7 @@ namespace OO_Tasks_Inheritence {
         private double _length;
         private double _width;
 
-        public Rectangle (string Name, string Colour, double Length, double Width)
+        public Rectangle (string Name, string Colour, double Length, double Width) : base(Name, Colour)
         {
 
         }
@@ -114,7 +114,7 @@ namespace OO_Tasks_Inheritence {
         public const double PI = 3.142;
         private double _radius;
 
-        public Circle(string Name, string Colour, string Radius)
+        public Circle(string Name, string Colour, double Radius) : base(Name, Colour)
         {
 
         }
@@ -124,7 +124,7 @@ namespace OO_Tasks_Inheritence {
             return _radius;
         }
 
-        public double GetArea()
+        public override double GetArea()
         {
             return _radius * _radius * PI;
         }
@@ -134,7 +134,7 @@ namespace OO_Tasks_Inheritence {
             return 2 * _radius * PI;
         }
 
-        public double GetPerimeter()
+        public override double GetPerimeter()
         {
             return 2 * _radius * PI;
         }
