@@ -4,28 +4,18 @@ namespace OO_Tasks_Interface {
 
     public interface IShapeProps
     {
-        /*public double GetArea()
-        {
-            return 0;
-        }
+        double GetArea();
+        double GetPerimeter();
 
-        public double GetPerimeter()
-        {
-            return 0;
-        }*/
     }
 
     public interface ICircleProps
     {
-        /*public double GetArea()
-        {
-            return 0;
-        }
+        double GetArea();
 
-        public double GetCircumference()
-        {
-            return 0;
-        }*/
+
+        double GetCircumference();
+
     }
 
     public class Shape
@@ -40,16 +30,9 @@ namespace OO_Tasks_Interface {
 
         }
 
-        public string Colour()
-        {
-            return _colour;
-        }
+        public string Colour{ get; set; }
         
-        public string Name()
-        {
-            return _name;
-        }
-
+        public string Name { get; set; }
 
     }
 
@@ -62,10 +45,8 @@ namespace OO_Tasks_Interface {
 
         }
 
-        public int NumSides()
-        {
-            return _NumSides;
-        }
+        public int NumSides { get; set; }
+
     }
 
     public class Square : Quadrilateral
@@ -79,12 +60,12 @@ namespace OO_Tasks_Interface {
 
         public double GetArea()
         {
-            return 0;
+            return _sideLength * _sideLength;
         }
 
         public double GetPerimeter()
         {
-            return 0;
+            return 4 * _sideLength;
         }
     }
 
@@ -119,10 +100,7 @@ namespace OO_Tasks_Interface {
 
         }
 
-        public double Radius()
-        {
-            return _radius;
-        }
+        public double Radius { get; set; }
 
         public double GetArea()
         {
