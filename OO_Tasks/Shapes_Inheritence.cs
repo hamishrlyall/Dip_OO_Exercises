@@ -5,8 +5,8 @@ namespace OO_Tasks_Inheritence {
     public abstract class Shape
     {
 
-        //private string _name;
-        //private string _colour;
+        private string _name;
+        private string _colour;
 
         public string Colour { get; set; }
 
@@ -14,7 +14,8 @@ namespace OO_Tasks_Inheritence {
 
         public Shape(string Name, string Colour)
         {
-
+            _name = Name;
+            _name = Name;
         }
 
         public abstract double GetArea();
@@ -25,12 +26,12 @@ namespace OO_Tasks_Inheritence {
 
     public abstract class Quadrilateral : Shape
     {
-        //private int _NumSides = 4;
+        private int _numSides = 4;
         public int NumSides = 4;
 
         public Quadrilateral(string Name, string Colour) : base (Name, Colour)
         {
-
+            _numSides = NumSides;
         }
     }
 
@@ -38,46 +39,47 @@ namespace OO_Tasks_Inheritence {
     {
 
         public double SideLength { get; set; }
-        //private double _sideLength;
+        private double _sideLength;
 
         public Square (string Name, string Colour, double SideLength) : base (Name, Colour)
         {
-
+            _sideLength = SideLength;
         }
         
         public override double GetArea()
         {
-            return SideLength * SideLength;
+            return _sideLength * _sideLength;
         }
 
         public override double GetPerimeter()
         {
-            return 4 * SideLength;
+            return 4 * _sideLength;
         }
 
     }
 
     public class Rectangle : Quadrilateral
     {
-        //private double _length;
-        //private double _width;
+        private double _length;
+        private double _width;
         public double Length { get; set; }
 
         public double Width { get; set; }
 
         public Rectangle (string Name, string Colour, double Length, double Width) : base(Name, Colour)
         {
-
+            _length = Length;
+            _width = Width;
         }
 
         public override double GetArea()
         {
-            return Length * Width;
+            return _length * _width;
         }
 
         public override double GetPerimeter()
         {
-            return (2 * Length) + (2 * Width);
+            return (2 * _length) + (2 * _width);
         }
 
     }
@@ -86,26 +88,26 @@ namespace OO_Tasks_Inheritence {
     {
         public double Radius { get; set; }
         public const double PI = 3.142;
-        //private double _radius;
+        private double _radius;
 
         public Circle(string Name, string Colour, double Radius) : base(Name, Colour)
         {
-
+            _radius = Radius;
         }
 
         public override double GetArea()
         {
-            return Radius * Radius * PI;
+            return _radius * _radius * PI;
         }
 
         public double GetCircumference()
         {
-            return 2 * Radius * PI;
+            return 2 * PI * _radius;
         }
 
         public override double GetPerimeter()
         {
-            return 2 * Radius * PI;
+            return 2 * PI * _radius;
         }
     }
     
